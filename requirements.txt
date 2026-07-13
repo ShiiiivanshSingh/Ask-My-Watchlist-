@@ -1,0 +1,4 @@
+numpy
+anthropic
+requests
+sentence-transformers

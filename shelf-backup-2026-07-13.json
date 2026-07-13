@@ -1,0 +1,612 @@
+{
+  "exportedAt": "2026-07-13T07:14:09.255Z",
+  "source": "shelf",
+  "version": 1,
+  "movieData": {
+    "Thesis (1996)": {
+      "watched": false
+    },
+    "Little Women (2019)": {
+      "watched": false
+    },
+    "Toni Erdmann (2016)": {
+      "watched": false
+    },
+    "Run Lola Run (1998)": {
+      "watched": false
+    },
+    "Psycho (1960)": {
+      "watched": true
+    },
+    "The Big Lebowski (1998)": {
+      "watched": false
+    },
+    "Fight Club (1999)": {
+      "watched": false
+    },
+    "Party Girl (1995)": {
+      "watched": false
+    },
+    "A Clockwork Orange (1971)": {
+      "watched": false
+    },
+    "O Brother, Where Art Thou? (2000)": {
+      "watched": true
+    },
+    "Aftersun (2022)": {
+      "watched": true
+    },
+    "Wild At Heart (1990)": {
+      "watched": false
+    },
+    "Paprika (2006)": {
+      "watched": false
+    },
+    "Cha Cha Real Smooth (2022)": {
+      "watched": false
+    },
+    "The Departed (2006)": {
+      "watched": false
+    },
+    "Withnail & I (1987)": {
+      "watched": false
+    },
+    "Heathers (1988)": {
+      "watched": false
+    },
+    "Diabolique (1955)": {
+      "watched": false
+    },
+    "Columbus (2017)": {
+      "watched": false
+    },
+    "Je Tu Il Elle (1974)": {
+      "watched": false
+    },
+    "The Discreet Charm of the Bourgeoisie (1972)": {
+      "watched": false
+    },
+    "Yesterday, Today and Tomorrow (1963)": {
+      "watched": false
+    },
+    "Trust (1990)": {
+      "watched": false
+    },
+    "All the Real Girls (2003)": {
+      "watched": false
+    },
+    "A Special Day (1977)": {
+      "watched": false
+    },
+    "A Girl Walks Home Alone at Night (2014)": {
+      "watched": true
+    },
+    "Tomboy (2011)": {
+      "watched": false
+    },
+    "High and Low (1963)": {
+      "watched": false
+    },
+    "My Own Private Idaho (1991)": {
+      "watched": false
+    },
+    "Thelma (2017)": {
+      "watched": false
+    },
+    "Vertigo (1958)": {
+      "watched": true
+    },
+    "8½ (1963)": {
+      "watched": false
+    },
+    "Choose Me (1984)": {
+      "watched": false
+    },
+    "Fried Green Tomatoes (1991)": {
+      "watched": false
+    },
+    "Bonnie and Clyde (1967)": {
+      "watched": false
+    },
+    "To Be or Not to Be (1942)": {
+      "watched": false
+    },
+    "Blade Runner (1982)": {
+      "watched": true
+    },
+    "Trainspotting (1996)": {
+      "watched": false
+    },
+    "The Raid: Redemption (2011)": {
+      "watched": true
+    },
+    "Are You There God? It's Me, Margaret (2023)": {
+      "watched": true
+    },
+    "The Lighthouse (2019)": {
+      "watched": false
+    },
+    "She's All That (1999)": {
+      "watched": false
+    },
+    "City of God (2002)": {
+      "watched": false
+    },
+    "Roman Holiday (1953)": {
+      "watched": false
+    },
+    "The Young Girls of Rochefort (1967)": {
+      "watched": false
+    },
+    "Cloudy with a Chance of Meatballs (2009)": {
+      "watched": false
+    },
+    "Holes (2003)": {
+      "watched": false
+    },
+    "Parachute (2023)": {
+      "watched": false
+    },
+    "Project Hail Mary (2026)": {
+      "watched": true
+    },
+    "Blade Runner 2049 (2017)": {
+      "watched": true
+    },
+    "Drop Dead Gorgeous (1999)": {
+      "watched": false
+    },
+    "Perfect Blue (1997)": {
+      "watched": false
+    },
+    "A Room with a View (1985)": {
+      "watched": false
+    },
+    "Possession (1981)": {
+      "watched": false
+    },
+    "The Blair Witch Project (1999)": {
+      "watched": false
+    },
+    "Last Night (1998)": {
+      "watched": false
+    },
+    "Celine and Julie Go Boating (1974)": {
+      "watched": false
+    },
+    "No Other Choice (2025)": {
+      "watched": false
+    },
+    "Mike & Nick & Nick & Alice (2024)": {
+      "watched": false
+    },
+    "Stranger Than Paradise (1984)": {
+      "watched": false
+    },
+    "La Virgen de Agosto (2019)": {
+      "watched": false
+    },
+    "Memories of Murder (2003)": {
+      "watched": true
+    },
+    "A Bronx Tale (1993)": {
+      "watched": false
+    },
+    "Into the Wild (2007)": {
+      "watched": false
+    },
+    "Woman in the Dunes (1964)": {
+      "watched": false
+    },
+    "My Summer of Love (2004)": {
+      "watched": false
+    },
+    "Dirty Dancing (1987)": {
+      "watched": false
+    },
+    "The Virgin Suicides (1999)": {
+      "watched": false
+    },
+    "It's a Wonderful Life (1946)": {
+      "watched": false
+    },
+    "Fracture (2007)": {
+      "watched": false
+    },
+    "Malina (1991)": {
+      "watched": false
+    },
+    "The Panic in Needle Park (1971)": {
+      "watched": false
+    },
+    "Paul (2011)": {
+      "watched": true
+    },
+    "Do the Right Thing (1989)": {
+      "watched": false
+    },
+    "Eraserhead (1977)": {
+      "watched": false
+    },
+    "Persona (1966)": {
+      "watched": false
+    },
+    "Snatch (2000)": {
+      "watched": true
+    },
+    "A Matter of Life and Death (1946)": {
+      "watched": false
+    },
+    "Indian Summer (1993)": {
+      "watched": false
+    },
+    "Elevator to the Gallows (1958)": {
+      "watched": false
+    },
+    "Come and See (1985)": {
+      "watched": false
+    },
+    "Dr. Strangelove (1964)": {
+      "watched": false
+    },
+    "Oslo, August 31st (2011)": {
+      "watched": false
+    },
+    "System Crasher (2019)": {
+      "watched": false
+    },
+    "Closer (2004)": {
+      "watched": false
+    },
+    "Four Lions (2010)": {
+      "watched": false
+    },
+    "Mildred Pierce (1945)": {
+      "watched": false
+    },
+    "Belle de Jour (1967)": {
+      "watched": false
+    },
+    "Alien (1979)": {
+      "watched": false
+    },
+    "Last Year at Marienbad (1961)": {
+      "watched": false
+    },
+    "The Lovers on the Bridge (1991)": {
+      "watched": true
+    },
+    "The August Virgin (2019)": {
+      "watched": false
+    },
+    "Pan's Labyrinth (2006)": {
+      "watched": false
+    },
+    "Petite Maman (2021)": {
+      "watched": true
+    },
+    "But I'm a Cheerleader (1999)": {
+      "watched": true
+    },
+    "Silvia Prieto (1999)": {
+      "watched": false
+    },
+    "Happyend (2024)": {
+      "watched": false
+    },
+    "The Children's Hour (1961)": {
+      "watched": false
+    },
+    "Show Me Love (1998)": {
+      "watched": false
+    },
+    "Nowhere (1997)": {
+      "watched": true
+    },
+    "The Devil's Advocate (1997)": {
+      "watched": false
+    },
+    "Phantom Thread (2017)": {
+      "watched": false
+    },
+    "The Apartment (1960)": {
+      "watched": true
+    },
+    "Training Day (2001)": {
+      "watched": false
+    },
+    "Citizen Kane (1941)": {
+      "watched": false
+    },
+    "I Saw the Devil (2010)": {
+      "watched": true
+    },
+    "The Furious (2026)": {
+      "watched": true
+    },
+    "The Tenant (1976)": {
+      "watched": false
+    },
+    "Rear Window (1954)": {
+      "watched": false
+    },
+    "Sinners (2025)": {
+      "watched": false
+    },
+    "No Country for Old Men (2007)": {
+      "watched": false
+    },
+    "The Umbrellas of Cherbourg (1964)": {
+      "watched": false
+    },
+    "The 400 Blows (1959)": {
+      "watched": false
+    },
+    "Jules and Jim (1962)": {
+      "watched": false
+    },
+    "Breathless (1960)": {
+      "watched": false
+    },
+    "Stolen Kisses (1968)": {
+      "watched": false
+    },
+    "The Woman Next Door (1981)": {
+      "watched": false
+    },
+    "Day for Night (1973)": {
+      "watched": false
+    },
+    "Paris, 13th District (2021)": {
+      "watched": false
+    }
+  },
+  "posterCache": {
+    "Fight Club (1999)": "https://image.tmdb.org/t/p/w342/jSziioSwPVrOy9Yow3XhWIBDjq1.jpg",
+    "Psycho (1960)": "https://image.tmdb.org/t/p/w342/yz4QVqPx3h1hD1DfqqQkCq3rmxW.jpg",
+    "Party Girl (1995)": "https://image.tmdb.org/t/p/w342/cfGEUftQVjvJHTTc3OKbzfsBamT.jpg",
+    "Run Lola Run (1998)": "https://image.tmdb.org/t/p/w342/v0giIi4bTILVhNhJajet3WWY3FA.jpg",
+    "The Big Lebowski (1998)": "https://image.tmdb.org/t/p/w342/3bv6WAp6BSxxYvB5ozKFUYuRA8C.jpg",
+    "Little Women (2019)": "https://image.tmdb.org/t/p/w342/yn5ihODtZ7ofn8pDYfxCmxh8AXI.jpg",
+    "Thesis (1996)": "https://image.tmdb.org/t/p/w342/dPyONW7fyb3iQ5s4WieNaHSX2id.jpg",
+    "Toni Erdmann (2016)": "https://image.tmdb.org/t/p/w342/v3gf7T8hb8aYv05X2jHmxJQWPZr.jpg",
+    "A Clockwork Orange (1971)": "https://image.tmdb.org/t/p/w342/4sHeTAp65WrSSuc05nRBKddhBxO.jpg",
+    "Aftersun (2022)": "https://image.tmdb.org/t/p/w342/evKz85EKouVbIr51zy5fOtpNRPg.jpg",
+    "O Brother, Where Art Thou? (2000)": "https://image.tmdb.org/t/p/w342/s9foMAcLg8GEzzQzer04qOGdD1k.jpg",
+    "Wild At Heart (1990)": "https://image.tmdb.org/t/p/w342/uLUFI5sJIfWrBUWB2Y1dEuyvvVy.jpg",
+    "Cha Cha Real Smooth (2022)": "https://image.tmdb.org/t/p/w342/iUvoVhvwTlP8DofoqeIu7QAGLAe.jpg",
+    "Paprika (2006)": "https://image.tmdb.org/t/p/w342/bLUUr474Go1DfeN1HLjE3rnZXBq.jpg",
+    "The Departed (2006)": "https://image.tmdb.org/t/p/w342/nT97ifVT2J1yMQmeq20Qblg61T.jpg",
+    "Withnail & I (1987)": "https://image.tmdb.org/t/p/w342/i18cIp8A10A2JgByrfA9oIC9299.jpg",
+    "Heathers (1988)": "https://image.tmdb.org/t/p/w342/dGbVfM4WlM7uvIbyRehfPZUIgp2.jpg",
+    "Columbus (2017)": "https://image.tmdb.org/t/p/w342/3ZE5Wl3CdfUH4BkWRmyMKPHkWHx.jpg",
+    "Diabolique (1955)": "https://image.tmdb.org/t/p/w342/jE8ygUYBUGyUcM4sR6iinPqYeDK.jpg",
+    "Yesterday, Today and Tomorrow (1963)": "https://image.tmdb.org/t/p/w342/uRJuHGtdNES7OgCoBpTXkOTO9IL.jpg",
+    "Trust (1990)": "https://image.tmdb.org/t/p/w342/9wE7LuIkvuPfr4Ye6fMqPXHqaiE.jpg",
+    "The Discreet Charm of the Bourgeoisie (1972)": "https://image.tmdb.org/t/p/w342/zN4ILX2x64PvT2jIOAHXxCOi5WA.jpg",
+    "All the Real Girls (2003)": "https://image.tmdb.org/t/p/w342/sQ6dMkwPIFucYSmFQcr38WBYzs.jpg",
+    "Je Tu Il Elle (1974)": "https://image.tmdb.org/t/p/w342/4arnTs41WSLWsnENWdljFKo0pu1.jpg",
+    "A Special Day (1977)": "https://image.tmdb.org/t/p/w342/jzRn7N1mFowkQ5IkUkfWoxXJtYU.jpg",
+    "A Girl Walks Home Alone at Night (2014)": "https://image.tmdb.org/t/p/w342/cd2rCE1nun7CESjBI8PGNEof1tb.jpg",
+    "Tomboy (2011)": "https://image.tmdb.org/t/p/w342/plEV1Q5u5caYASlG3pq3ON7acN7.jpg",
+    "Thelma (2017)": "https://image.tmdb.org/t/p/w342/vbRAGLzbC75QfiKD1lKjmnQGuph.jpg",
+    "My Own Private Idaho (1991)": "https://image.tmdb.org/t/p/w342/p9TF90Pb5yg2MNb2UztzyXktMm4.jpg",
+    "High and Low (1963)": "https://image.tmdb.org/t/p/w342/tgNjemQPG96uIezpiUiXFcer5ga.jpg",
+    "8½ (1963)": "https://image.tmdb.org/t/p/w342/23VIf7zNxAgaXwIlvzd3IvOd9sY.jpg",
+    "Vertigo (1958)": "https://image.tmdb.org/t/p/w342/15uOEfqBNTVtDUT7hGBVCka0rZz.jpg",
+    "To Be or Not to Be (1942)": "https://image.tmdb.org/t/p/w342/dDQRpEoyjHT4fzw9cNklIvZuXYg.jpg",
+    "Fried Green Tomatoes (1991)": "https://image.tmdb.org/t/p/w342/g71l1vbJwyAAYk8zKCkIQQ58qcb.jpg",
+    "Bonnie and Clyde (1967)": "https://image.tmdb.org/t/p/w342/sCSQFK9kMsprT4jgWqgw82dT6WI.jpg",
+    "Blade Runner (1982)": "https://image.tmdb.org/t/p/w342/63N9uy8nd9j7Eog2axPQ8lbr3Wj.jpg",
+    "Trainspotting (1996)": "https://image.tmdb.org/t/p/w342/1jUC02qsqS2NxBMFarbIhcQtazV.jpg",
+    "The Raid: Redemption (2011)": "https://image.tmdb.org/t/p/w342/Abnm1Ws3JH0ReCfEhLMPwPcMcGO.jpg",
+    "Are You There God? It's Me, Margaret (2023)": "https://image.tmdb.org/t/p/w342/yb6UB4WC3znlwU0L4AqMnjR9G9S.jpg",
+    "Choose Me (1984)": "https://image.tmdb.org/t/p/w342/1SmtXAHEUdeQQHlRSezelXk65D9.jpg",
+    "The Lighthouse (2019)": "https://image.tmdb.org/t/p/w342/yAKNmpcUweGH6WMCEWenwU9PsbE.jpg",
+    "City of God (2002)": "https://image.tmdb.org/t/p/w342/k7eYdWvhYQyRQoU2TB2A2Xu2TfD.jpg",
+    "Roman Holiday (1953)": "https://image.tmdb.org/t/p/w342/8lI9dmz1RH20FAqltkGelY1v4BE.jpg",
+    "The Young Girls of Rochefort (1967)": "https://image.tmdb.org/t/p/w342/jtxhyGaYhurH6KsjvP1jV3dDypz.jpg",
+    "Parachute (2023)": "https://image.tmdb.org/t/p/w342/aGwFRwsqkCX1eMsMZCD0tgGA8Fr.jpg",
+    "Cloudy with a Chance of Meatballs (2009)": "https://image.tmdb.org/t/p/w342/qhOhIKf7QEyQ5dMrRUqs5eTX1Oq.jpg",
+    "Holes (2003)": "https://image.tmdb.org/t/p/w342/o2Dm2mcE1qW8vT0bpsJO5OMBbqa.jpg",
+    "She's All That (1999)": "https://image.tmdb.org/t/p/w342/a0pepZNFCjggc7Na9gEwbTI1f46.jpg",
+    "Project Hail Mary (2026)": "https://image.tmdb.org/t/p/w342/yihdXomYb5kTeSivtFndMy5iDmf.jpg",
+    "Blade Runner 2049 (2017)": "https://image.tmdb.org/t/p/w342/gajva2L0rPYkEWjzgFlBXCAVBE5.jpg",
+    "Drop Dead Gorgeous (1999)": "https://image.tmdb.org/t/p/w342/44eTdzCnb27urFheuhBdJxBhrwg.jpg",
+    "The Blair Witch Project (1999)": "https://image.tmdb.org/t/p/w342/9050VGrYjYrEjpOvDZVAngLbg1f.jpg",
+    "Last Night (1998)": "https://image.tmdb.org/t/p/w342/hlPBctls7n03GOj3qDjFWWzCiFt.jpg",
+    "Perfect Blue (1997)": "https://image.tmdb.org/t/p/w342/6WTiOCfDPP8XV4jqfloiVWf7KHq.jpg",
+    "Possession (1981)": "https://image.tmdb.org/t/p/w342/A9bnRn05riOKWftvQlLKa2gl51n.jpg",
+    "Stranger Than Paradise (1984)": "https://image.tmdb.org/t/p/w342/Q9wdlNjBOti4JhAjAQXphzShw3.jpg",
+    "No Other Choice (2025)": "https://image.tmdb.org/t/p/w342/vc2S0dvgpsM0XfSiXZDMVkRCSSU.jpg",
+    "Memories of Murder (2003)": "https://image.tmdb.org/t/p/w342/jcgUjx1QcupGzjntTVlnQ15lHqy.jpg",
+    "Into the Wild (2007)": "https://image.tmdb.org/t/p/w342/jnLnLYP5pGDfri04gxtAqAvkHMw.jpg",
+    "A Bronx Tale (1993)": "https://image.tmdb.org/t/p/w342/sDbO6LmLYtyqAoFTPpRcMgPSCEO.jpg",
+    "La Virgen de Agosto (2019)": "https://image.tmdb.org/t/p/w342/ybsLltBY2HWE43mvDgfW8nnDldh.jpg",
+    "Celine and Julie Go Boating (1974)": "https://image.tmdb.org/t/p/w342/h62tGTMdVVUThFwl5b4EP18cBhb.jpg",
+    "Woman in the Dunes (1964)": "https://image.tmdb.org/t/p/w342/xiBr3bIT2xpbuIKo5bLK7ebP4O1.jpg",
+    "The Virgin Suicides (1999)": "https://image.tmdb.org/t/p/w342/1NCQtXPQnaHRjOZVmktA9BSM35F.jpg",
+    "My Summer of Love (2004)": "https://image.tmdb.org/t/p/w342/47eozMel2wZgEASToUzScsPVpDs.jpg",
+    "Dirty Dancing (1987)": "https://image.tmdb.org/t/p/w342/9Jw6jys7q9gjzVX5zm1z0gC8gY9.jpg",
+    "Malina (1991)": "https://image.tmdb.org/t/p/w342/sbohIG5vFkg84ZoMTElAZX4cBJL.jpg",
+    "It's a Wonderful Life (1946)": "https://image.tmdb.org/t/p/w342/bSqt9rhDZx1Q7UZ86dBPKdNomp2.jpg",
+    "Fracture (2007)": "https://image.tmdb.org/t/p/w342/qNen8x5gaikjIg9CFihgxYcJwQe.jpg",
+    "The Panic in Needle Park (1971)": "https://image.tmdb.org/t/p/w342/rhJ8Dnl6Z9KR9R2zskBKIfrFeFs.jpg",
+    "Paul (2011)": "https://image.tmdb.org/t/p/w342/dKhexH8nS08lVlSmwSs00cHFxbY.jpg",
+    "Eraserhead (1977)": "https://image.tmdb.org/t/p/w342/mxveW3mGVc0DzLdOmtkZsgd7c3B.jpg",
+    "A Matter of Life and Death (1946)": "https://image.tmdb.org/t/p/w342/H74LWKnhOeIFSk9gNjBcPjIov3.jpg",
+    "Persona (1966)": "https://image.tmdb.org/t/p/w342/fVA5hTcAOlW2LJyelViQfWHxUcx.jpg",
+    "Elevator to the Gallows (1958)": "https://image.tmdb.org/t/p/w342/jgeZS97po2luaeElfUh07VAbVfV.jpg",
+    "Snatch (2000)": "https://image.tmdb.org/t/p/w342/kJZoAHq1SLDdWjeNGtlHAnGpmFV.jpg",
+    "Indian Summer (1993)": "https://image.tmdb.org/t/p/w342/A1gUvZbQ25wsnj7HD8bDwTxOSWy.jpg",
+    "Do the Right Thing (1989)": "https://image.tmdb.org/t/p/w342/63rmSDPahrH7C1gEFYzRuIBAN9W.jpg",
+    "Come and See (1985)": "https://image.tmdb.org/t/p/w342/qNbMsKVzigERgJUbwf8pKyZogpb.jpg",
+    "Dr. Strangelove (1964)": "https://image.tmdb.org/t/p/w342/6x7MzQ6BOMlRzam1StcmPO9v61g.jpg",
+    "Oslo, August 31st (2011)": "https://image.tmdb.org/t/p/w342/a9WUrw5Dkl8mumi2YlOlpt2f5Dc.jpg",
+    "System Crasher (2019)": "https://image.tmdb.org/t/p/w342/YqbeGd7ojtxRukKhvoq6Bgf4t8.jpg",
+    "Four Lions (2010)": "https://image.tmdb.org/t/p/w342/x4JzaRPXBs9wiHCe3e3ymXWuwfd.jpg",
+    "Belle de Jour (1967)": "https://image.tmdb.org/t/p/w342/iUAFECovwPA0cVV9bo4uNGLJSGL.jpg",
+    "Mildred Pierce (1945)": "https://image.tmdb.org/t/p/w342/3bqF5bJPjeITNeC8ydbUOQZfuqP.jpg",
+    "Closer (2004)": "https://image.tmdb.org/t/p/w342/fGGaokx4k00S0J603VG53Qlr9jz.jpg",
+    "Alien (1979)": "https://image.tmdb.org/t/p/w342/vfrQk5IPloGg1v9Rzbh2Eg3VGyM.jpg",
+    "Last Year at Marienbad (1961)": "https://image.tmdb.org/t/p/w342/syIJCqiSkGRJTlyaBtyI5jqPtE7.jpg",
+    "The Lovers on the Bridge (1991)": "https://image.tmdb.org/t/p/w342/un81oln6mAv66sqnkgPSpWONUqP.jpg",
+    "The August Virgin (2019)": "https://image.tmdb.org/t/p/w342/ybsLltBY2HWE43mvDgfW8nnDldh.jpg",
+    "Pan's Labyrinth (2006)": "https://image.tmdb.org/t/p/w342/z7xXihu5wHuSMWymq5VAulPVuvg.jpg",
+    "Silvia Prieto (1999)": "https://image.tmdb.org/t/p/w342/cmnAjgJ6z495FTcPg9iOzAH1wKD.jpg",
+    "But I'm a Cheerleader (1999)": "https://image.tmdb.org/t/p/w342/dGEwlAuzTZoZjvsqgT2MRKHnGi8.jpg",
+    "Petite Maman (2021)": "https://image.tmdb.org/t/p/w342/fxl2ARZO2vRfUGDfqSz2bostauE.jpg",
+    "Happyend (2024)": "https://image.tmdb.org/t/p/w342/fRN6U0srlhNe0B69dJZ0seuv4GZ.jpg",
+    "The Children's Hour (1961)": "https://image.tmdb.org/t/p/w342/goyEWixvULM2IRN4KsKibyrJE4J.jpg",
+    "Show Me Love (1998)": "https://image.tmdb.org/t/p/w342/ek5fMfwGVTyQ0N0VXBT1VWqan3U.jpg",
+    "The Devil's Advocate (1997)": "https://image.tmdb.org/t/p/w342/5ZzBGpxy55OQzHxKVY11IpY6a0o.jpg",
+    "Phantom Thread (2017)": "https://image.tmdb.org/t/p/w342/hgoWjp9Sh0MI97eAMZCnIoVfgvq.jpg",
+    "Nowhere (1997)": "https://image.tmdb.org/t/p/w342/c1TZKfzvATep5x5DthqWjjWtU2l.jpg",
+    "Training Day (2001)": "https://image.tmdb.org/t/p/w342/bUeiwBQdupBLQthMCHKV7zv56uv.jpg",
+    "The Apartment (1960)": "https://image.tmdb.org/t/p/w342/hhSRt1KKfRT0yEhEtRW3qp31JFU.jpg",
+    "Citizen Kane (1941)": "https://image.tmdb.org/t/p/w342/sav0jxhqiH0bPr2vZFU0Kjt2nZL.jpg"
+  },
+  "manualPosters": {
+    "A Room with a View (1985)": "https://image.tmdb.org/t/p/w780/d41ypsni2PC2VkRS2nhCmaf6kUW.jpg",
+    "I Saw the Devil (2010)": "https://image.tmdb.org/t/p/w500/zp5NrmYp80axIGiEiYPmm1CW6uH.jpg",
+    "Mike & Nick & Nick & Alice (2024)": "https://image.tmdb.org/t/p/w780/7F0jc75HrSkLVcvOXR2FXAIwuEv.jpg",
+    "The Furious (2026)": "https://image.tmdb.org/t/p/w500/zP19YO60jwEsfKd5Qf1UvA5uJu8.jpg",
+    "All the Real Girls (2003)": "https://a.ltrbxd.com/resized/alternative-poster/4/4/1/1/4/p/jnNEmQ5CAibeKq8LKOnbfXE7Gd6-0-150-0-225-crop.jpg?v=8d4a6e817c",
+    "Belle de Jour (1967)": "https://image.tmdb.org/t/p/w780/xx63jQI35JAwlYu0p0j6PpMQKSK.jpg",
+    "A Clockwork Orange (1971)": "https://image.tmdb.org/t/p/w780/dSbTJu1L9YZnM0A6ZVJP2N1R7GV.jpg",
+    "The Tenant (1976)": "https://image.tmdb.org/t/p/w500/4Qhzb1ICFMqE3isWoln497qSH7n.jpg",
+    "Rear Window (1954)": "https://image.tmdb.org/t/p/w500/ILVF0eJxHMddjxeQhswFtpMtqx.jpg",
+    "Sinners (2025)": "https://image.tmdb.org/t/p/w500/fWPgbnt2LSqkQ6cdQc0SZN9CpLm.jpg",
+    "No Country for Old Men (2007)": "https://image.tmdb.org/t/p/w500/uB7RDZby43Wvu8SKGHHTwGyTDBX.jpg",
+    "The Umbrellas of Cherbourg (1964)": "https://image.tmdb.org/t/p/w500/tAgTf64XKK5ir7w5C7dnB53jWWG.jpg",
+    "The 400 Blows (1959)": "https://image.tmdb.org/t/p/w500/12PuU23kkDLvTd0nb8hMlE3oShB.jpg",
+    "Jules and Jim (1962)": "https://image.tmdb.org/t/p/w500/kuFjZlcZhQFDtIjuI3GQJjsQG03.jpg",
+    "Breathless (1960)": "https://image.tmdb.org/t/p/w500/9Wx0Wdn2EOqeCZU4SP6tlS3LOml.jpg",
+    "Stolen Kisses (1968)": "https://image.tmdb.org/t/p/w500/5qHh1Vp2TOOX5IaTVt4wyT8OTnR.jpg",
+    "The Woman Next Door (1981)": "https://image.tmdb.org/t/p/w500/nxBf3Y7Q9XVuKvUl0df8MW2IsQ7.jpg",
+    "Day for Night (1973)": "https://image.tmdb.org/t/p/w500/e5xDrSx6zDEUlMe2dWKGhv88PDZ.jpg",
+    "Paris, 13th District (2021)": "https://image.tmdb.org/t/p/w500/kSXPsrausCYVsDnQaJfhzqR9fV7.jpg"
+  },
+  "customMovies": [
+    "Thesis (1996)",
+    "Little Women (2019)",
+    "Toni Erdmann (2016)",
+    "Run Lola Run (1998)",
+    "Psycho (1960)",
+    "The Big Lebowski (1998)",
+    "Fight Club (1999)",
+    "Party Girl (1995)",
+    "A Clockwork Orange (1971)",
+    "O Brother, Where Art Thou? (2000)",
+    "Aftersun (2022)",
+    "Wild At Heart (1990)",
+    "Paprika (2006)",
+    "Cha Cha Real Smooth (2022)",
+    "The Departed (2006)",
+    "Withnail & I (1987)",
+    "Heathers (1988)",
+    "Diabolique (1955)",
+    "Columbus (2017)",
+    "Je Tu Il Elle (1974)",
+    "The Discreet Charm of the Bourgeoisie (1972)",
+    "Yesterday, Today and Tomorrow (1963)",
+    "Trust (1990)",
+    "All the Real Girls (2003)",
+    "A Special Day (1977)",
+    "A Girl Walks Home Alone at Night (2014)",
+    "Tomboy (2011)",
+    "High and Low (1963)",
+    "My Own Private Idaho (1991)",
+    "Thelma (2017)",
+    "Vertigo (1958)",
+    "8½ (1963)",
+    "Choose Me (1984)",
+    "Fried Green Tomatoes (1991)",
+    "Bonnie and Clyde (1967)",
+    "To Be or Not to Be (1942)",
+    "Blade Runner (1982)",
+    "Trainspotting (1996)",
+    "The Raid: Redemption (2011)",
+    "Are You There God? It's Me, Margaret (2023)",
+    "The Lighthouse (2019)",
+    "She's All That (1999)",
+    "City of God (2002)",
+    "Roman Holiday (1953)",
+    "The Young Girls of Rochefort (1967)",
+    "Cloudy with a Chance of Meatballs (2009)",
+    "Holes (2003)",
+    "Parachute (2023)",
+    "Project Hail Mary (2026)",
+    "Blade Runner 2049 (2017)",
+    "Drop Dead Gorgeous (1999)",
+    "Perfect Blue (1997)",
+    "A Room with a View (1985)",
+    "Possession (1981)",
+    "The Blair Witch Project (1999)",
+    "Last Night (1998)",
+    "Celine and Julie Go Boating (1974)",
+    "No Other Choice (2025)",
+    "Mike & Nick & Nick & Alice (2024)",
+    "Stranger Than Paradise (1984)",
+    "La Virgen de Agosto (2019)",
+    "Memories of Murder (2003)",
+    "A Bronx Tale (1993)",
+    "Into the Wild (2007)",
+    "Woman in the Dunes (1964)",
+    "My Summer of Love (2004)",
+    "Dirty Dancing (1987)",
+    "The Virgin Suicides (1999)",
+    "It's a Wonderful Life (1946)",
+    "Fracture (2007)",
+    "Malina (1991)",
+    "The Panic in Needle Park (1971)",
+    "Paul (2011)",
+    "Do the Right Thing (1989)",
+    "Eraserhead (1977)",
+    "Persona (1966)",
+    "Snatch (2000)",
+    "A Matter of Life and Death (1946)",
+    "Indian Summer (1993)",
+    "Elevator to the Gallows (1958)",
+    "Come and See (1985)",
+    "Dr. Strangelove (1964)",
+    "Oslo, August 31st (2011)",
+    "System Crasher (2019)",
+    "Closer (2004)",
+    "Four Lions (2010)",
+    "Mildred Pierce (1945)",
+    "Belle de Jour (1967)",
+    "Alien (1979)",
+    "Last Year at Marienbad (1961)",
+    "The Lovers on the Bridge (1991)",
+    "The August Virgin (2019)",
+    "Pan's Labyrinth (2006)",
+    "Petite Maman (2021)",
+    "But I'm a Cheerleader (1999)",
+    "Silvia Prieto (1999)",
+    "Happyend (2024)",
+    "The Children's Hour (1961)",
+    "Show Me Love (1998)",
+    "Nowhere (1997)",
+    "The Devil's Advocate (1997)",
+    "Phantom Thread (2017)",
+    "The Apartment (1960)",
+    "Training Day (2001)",
+    "Citizen Kane (1941)",
+    "I Saw the Devil (2010)",
+    "The Furious (2026)",
+    "The Tenant (1976)",
+    "Rear Window (1954)",
+    "Sinners (2025)",
+    "No Country for Old Men (2007)",
+    "The Umbrellas of Cherbourg (1964)",
+    "The 400 Blows (1959)",
+    "Jules and Jim (1962)",
+    "Breathless (1960)",
+    "Stolen Kisses (1968)",
+    "The Woman Next Door (1981)",
+    "Day for Night (1973)",
+    "Paris, 13th District (2021)"
+  ],
+  "removedTitles": []
+}
