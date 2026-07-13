@@ -239,7 +239,7 @@ function createTicket(query) {
 
   const answerEl = document.createElement("div");
   answerEl.className = "ticket-answer";
-  answerEl.textContent = "Pulling your ticket...";
+  answerEl.textContent = "Flipping back through Shivansh's diary...";
 
   const footer = document.createElement("div");
   footer.className = "ticket-footer";
