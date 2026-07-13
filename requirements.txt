@@ -1,4 +1,5 @@
-numpy
-anthropic
+flask
+gunicorn
 requests
+numpy
 sentence-transformers
