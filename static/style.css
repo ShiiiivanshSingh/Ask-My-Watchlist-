@@ -344,6 +344,10 @@ main {
   margin-bottom: 12px;
 }
 
+.ticket-serial-api {
+  color: var(--rust);
+}
+
 .ticket-question {
   font-family: 'Work Sans', sans-serif;
   font-weight: 600;

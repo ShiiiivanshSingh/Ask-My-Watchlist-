@@ -21,6 +21,7 @@ const terminalBody = document.getElementById("terminal-body");
 
 const HISTORY_KEY = "askShelfHistory";
 let ticketCount = 0;
+let apiCallCount = 0;
 
 function loadHistory() {
   try {
@@ -210,6 +211,10 @@ function logInsights(query, result) {
   if (result.context) {
     appendTerminal(`> context retrieved:\n${truncate(result.context, 400)}`, "terminal-muted");
   }
+  if (result.source === "api") {
+    apiCallCount += 1;
+    appendTerminal(`> groq api calls this session: ${apiCallCount}`, "terminal-api");
+  }
 }
 
 function stampLabel(source) {
@@ -245,12 +250,15 @@ function createTicket(query) {
   ticket.appendChild(footer);
   ticketsEl.prepend(ticket);
 
-  return { ticket, answerEl, footer };
+  return { ticket, serialEl, answerEl, footer };
 }
 
 function finishTicket(refs, result) {
   refs.ticket.classList.remove("loading");
   refs.answerEl.innerHTML = renderMarkdownLite(result.answer);
+  if (result.source === "api") {
+    refs.serialEl.classList.add("ticket-serial-api");
+  }
   const stamp = document.createElement("span");
   stamp.className = `stamp ${result.source}`;
   stamp.textContent = stampLabel(result.source);
