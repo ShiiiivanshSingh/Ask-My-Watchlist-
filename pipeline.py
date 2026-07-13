@@ -76,9 +76,12 @@ class VectorIndex:
         return [(self.records[i], float(sims[i])) for i in idx]
 
     def save(self, path):
-        np.save(path + ".npy", self.vectors)
-        with open(path + ".json", "w") as f:
-            json.dump(self.records, f)
+        try:
+            np.save(path + ".npy", self.vectors)
+            with open(path + ".json", "w") as f:
+                json.dump(self.records, f)
+        except OSError:
+            pass  # Vercel read-only system
 
     def load(self, path):
         if os.path.exists(path + ".npy") and os.path.exists(path + ".json"):
@@ -158,7 +161,10 @@ def chunk_text(text, chunk_size=500, overlap=50):
 
 class Pipeline:
     def __init__(self, api_client, embedder=None, cache_threshold=0.2, kb_threshold=0.08, store_dir="store"):
-        os.makedirs(store_dir, exist_ok=True)
+        try:
+            os.makedirs(store_dir, exist_ok=True)
+        except OSError:
+            pass  # Vercel read-only system
         self.embedder = embedder or HashingEmbedder()
         self.cache = SemanticCache(self.embedder, cache_threshold, os.path.join(store_dir, "cache"))
         self.kb = LocalKB(self.embedder, kb_threshold, os.path.join(store_dir, "kb"))

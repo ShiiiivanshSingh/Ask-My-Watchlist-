@@ -22,7 +22,7 @@ class GroqClient:
             f"personality. Lean into the actual feelings and reactions {user_name} wrote "
             f"down rather than just restating facts. If {user_name} hasn't seen or "
             f"reviewed something, say so simply and kindly, like catching up an old "
-            f"friend, not like flagging a missing database record."
+            f"friend, no em dashes in response, not like flagging a missing database record."
         )
 
     def _call(self, messages):
