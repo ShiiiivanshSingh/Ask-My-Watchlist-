@@ -1,139 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%230A0A0A'/><text x='50' y='68' font-family='IBM Plex Mono, monospace' font-weight='700' font-size='68' fill='%23D6A75A' text-anchor='middle'>*</text></svg>">
-<meta charset="UTF-8">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ask Shelf</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%230A0A0A'/><text x='50' y='68' font-family='IBM Plex Mono, monospace' font-weight='700' font-size='68' fill='%23D6A75A' text-anchor='middle'>*</text></svg>">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ask Shelf</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
 
-<div class="app-shell">
-  <aside id="sidebar" class="sidebar hidden">
-    <div class="sidebar-header">
-      <span class="sidebar-title">HISTORY</span>
-      <button id="sidebar-collapse" class="sidebar-toggle" aria-label="Collapse history" title="Collapse">&laquo;</button>
-    </div>
-    <ul id="history-list" class="history-list"></ul>
-    <p id="history-empty" class="setting-note">Nothing here yet &mdash; ask something and it'll show up.</p>
-  </aside>
-
-  <button id="sidebar-expand" class="sidebar-expand" aria-label="Show history" title="Show history">&raquo; HISTORY</button>
-
-  <div class="app-main">
-    <header class="topbar">
-      <div class="wordmark">ASK<span class="wordmark-accent">/</span>SHELF</div>
-      <div class="topbar-right">
-<a href="https://github.com/ShiiiivanshSingh/Ask-My-Watchlist-"
-   target="_blank"
-   rel="noopener noreferrer"
-   class="entry-pill">
-  <i class="fab fa-github"></i> 
-</a>      </div>
-    </header>
-
-    <main>
-      <section class="hero">
-        <h1>ASK MY<br>MOVIE LOGS!</h1>
-        <p class="hero-sub">QUERY EVERY WATCH, RATING, AND REVIEW I'VE LOGGED!</p>
-      </section>
-      <section class="ask-box">
-        <form id="ask-form" autocomplete="off">
-          <div class="ask-mark" aria-hidden="true">*</div>
-          <input type="text" id="query" placeholder="did i like magnolia?" aria-label="Ask a question about your movies">
-          <button type="submit">ASK &rarr;</button>
-        </form>
-      </section>
-
-<section class="quick-row">
-  <button class="quick-btn" data-query="why do i call groundhog day the movie that changed me as a person">WHY GROUNDHOG DAY CHANGED ME</button>
-
-  <button class="quick-btn" data-query="what did i mean when i said after hours felt like a weird dream">DREAM ABOUT AFTER HOURS </button>
-
-  <button class="quick-btn" data-query="why do i think sorcerer is really about fate">SORCERER & FATE</button>
-
-  <button class="quick-btn" data-query="which scene from goodfellas did i appreciate the most">GOODFELLAS FAVORITE SCENE</button>
-
-  <button class="quick-btn" data-query="what did i love about adventures in babysitting">ADVENTURES IN BABYSITTING</button>
-
-  <button class="quick-btn" data-query="why does miracle mile remind me of my dreams">MIRACLE MILE!!</button>
-
-
-  <button class="quick-btn" data-query="why did y tu mamá también leave me feeling hollow">Y TU MAMÁ TAMBIÉN</button>
-
-  <button class="quick-btn" data-query="what did i mean when i said burke invented gaslighting">BURKE INVENTED GASLIGHTING</button>
-
-  <button class="quick-btn" data-query="why do i think the apartment deserves so much praise">THE APARTMENT TAKEAWAY</button>
-
-  <button class="quick-btn" data-query="why is magnolia soo good">BEAUTY OF MAGNOLIA</button>
-
-  <button class="quick-btn" data-query="why do i think classic films feel so soothing after watching casablanca">CASABLANCA</button>
-
-  <button class="quick-btn" data-query="why does sleepless in seattle remind me of every breath you take">EVERY BREATH YOU TAKE</button>
-
-  <button class="quick-btn" data-query="why do i think tarantino's masterpiece is inglourious basterds">TARANTINO'S MASTERPIECE</button>
-</section>
-
-<div id="tickets" aria-live="polite"></div>
-
-      <div id="empty-state" class="empty-state">
-        <div class="ticket-icon" aria-hidden="true">*</div>
-        <p>YOUR STORY'S WAITING RIGHT HERE</p>
-        <p class="empty-sub">ask &ldquo;have I watched Parasite?&rdquo; or &ldquo;what did I think of The Thing?&rdquo; &mdash; whatever's on your mind</p>
+  <div class="app-shell">
+    <aside id="sidebar" class="sidebar hidden">
+      <div class="sidebar-header">
+        <span class="sidebar-title">HISTORY</span>
+        <button id="sidebar-collapse" class="sidebar-toggle" aria-label="Collapse history"
+          title="Collapse">&laquo;</button>
       </div>
-    </main>
-  </div>
-</div>
+      <ul id="history-list" class="history-list"></ul>
+      <p id="history-empty" class="setting-note">Nothing here yet &mdash; ask something and it'll show up.</p>
+    </aside>
 
-<button id="settings-btn" class="corner-avatar" aria-label="Settings" title="Settings">S</button>
+    <button id="sidebar-expand" class="sidebar-expand" aria-label="Show history" title="Show history">&raquo;
+      HISTORY</button>
 
-<div id="settings-panel" class="overlay hidden">
-  <div class="overlay-backdrop" data-close="settings-panel"></div>
-  <div class="overlay-card">
-    <div class="overlay-header">
-      <h2>Settings</h2>
-      <button class="overlay-close" data-close="settings-panel" aria-label="Close settings">&times;</button>
-    </div>
-    <div class="overlay-body">
-      <div class="setting-row">
-        <div>
-          <p class="setting-label">Semantic cache</p>
-          <p class="setting-sub" id="cache-size-label">&mdash; entries</p>
+    <div class="app-main">
+      <header class="topbar">
+        <div class="wordmark">ASK<span class="wordmark-accent">/</span>SHELF</div>
+        <div class="topbar-right">
+          <a href="https://github.com/ShiiiivanshSingh/Ask-My-Watchlist-" target="_blank" rel="noopener noreferrer"
+            class="entry-pill">
+            <i class="fab fa-github"></i>
+          </a>
         </div>
-        <button id="clear-cache-btn" class="danger-btn">Clear cache</button>
+      </header>
+
+      <main>
+        <section class="hero">
+          <h1>ASK MY<br>MOVIE LOGS!</h1>
+          <p class="hero-sub">QUERY EVERY WATCH, RATING, AND REVIEW I'VE LOGGED!</p>
+        </section>
+        <section class="ask-box">
+          <form id="ask-form" autocomplete="off">
+            <div class="ask-mark" aria-hidden="true">*</div>
+            <input type="text" id="query" placeholder="did i like magnolia?"
+              aria-label="Ask a question about your movies">
+            <button type="submit">ASK &rarr;</button>
+          </form>
+        </section>
+
+        <section class="quick-row">
+          <button class="quick-btn" data-query="why do i call groundhog day the movie that changed me as a person">WHY
+            GROUNDHOG DAY CHANGED ME</button>
+
+          <button class="quick-btn" data-query="what did i mean when i said after hours felt like a weird dream">DREAM
+            ABOUT AFTER HOURS </button>
+
+          <button class="quick-btn" data-query="why do i think sorcerer is really about fate">SORCERER & FATE</button>
+
+          <button class="quick-btn" data-query="which scene from goodfellas did i appreciate the most">GOODFELLAS
+            FAVORITE SCENE</button>
+
+          <button class="quick-btn" data-query="what did i love about adventures in babysitting">ADVENTURES IN
+            BABYSITTING</button>
+
+          <button class="quick-btn" data-query="why does miracle mile remind me of my dreams">MIRACLE MILE!!</button>
+
+
+          <button class="quick-btn" data-query="why did y tu mamá también leave me feeling hollow">Y TU MAMÁ
+            TAMBIÉN</button>
+
+          <button class="quick-btn" data-query="my review of bend it like beckham">BEND IT LIKE BECKHAM</button>
+
+          <button class="quick-btn" data-query="my review of the apartment">THE APARTMENT
+            TAKEAWAY</button>
+
+          <button class="quick-btn" data-query="why is magnolia soo good">BEAUTY OF MAGNOLIA</button>
+
+          <button class="quick-btn"
+            data-query="why do i think classic films feel so soothing after watching casablanca">CASABLANCA</button>
+
+          <button class="quick-btn" data-query="why does sleepless in seattle remind me of every breath you take">EVERY
+            BREATH YOU TAKE</button>
+
+          <button class="quick-btn"
+            data-query="why do i think tarantino's masterpiece is inglourious basterds">TARANTINO'S MASTERPIECE</button>
+        </section>
+
+        <div id="tickets" aria-live="polite"></div>
+
+        <div id="empty-state" class="empty-state">
+          <div class="ticket-icon" aria-hidden="true">*</div>
+          <p>YOUR STORY'S WAITING RIGHT HERE</p>
+          <p class="empty-sub">ask &ldquo;have I watched Parasite?&rdquo; or &ldquo;what did I think of The
+            Thing?&rdquo; &mdash; whatever's on your mind</p>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <button id="settings-btn" class="corner-avatar" aria-label="Settings" title="Settings">S</button>
+
+  <div id="settings-panel" class="overlay hidden">
+    <div class="overlay-backdrop" data-close="settings-panel"></div>
+    <div class="overlay-card">
+      <div class="overlay-header">
+        <h2>Settings</h2>
+        <button class="overlay-close" data-close="settings-panel" aria-label="Close settings">&times;</button>
       </div>
-      <p class="setting-note">
-        Answers are cached by meaning, not exact wording &mdash; so a rephrased
-        question can replay an old answer instead of asking again. If a fix
-        was made to how questions get answered, clear the cache so old
-        (possibly outdated) replies stop showing up.
-      </p>
+      <div class="overlay-body">
+        <div class="setting-row">
+          <div>
+            <p class="setting-label">Semantic cache</p>
+            <p class="setting-sub" id="cache-size-label">&mdash; entries</p>
+          </div>
+          <button id="clear-cache-btn" class="danger-btn">Clear cache</button>
+        </div>
+        <p class="setting-note">
+          Answers are cached by meaning, not exact wording &mdash; so a rephrased
+          question can replay an old answer instead of asking again. If a fix
+          was made to how questions get answered, clear the cache so old
+          (possibly outdated) replies stop showing up.
+        </p>
+      </div>
     </div>
   </div>
-</div>
 
-<button id="terminal-fab" class="terminal-fab" aria-label="Open insights terminal" title="Insights terminal">*</button>
+  <button id="terminal-fab" class="terminal-fab" aria-label="Open insights terminal"
+    title="Insights terminal">*</button>
 
-<div id="terminal-panel" class="terminal-panel hidden">
-  <div class="terminal-header">
-    <div class="terminal-dots">
-      <span class="dot dot-red"></span>
-      <span class="dot dot-yellow"></span>
-      <span class="dot dot-green"></span>
+  <div id="terminal-panel" class="terminal-panel hidden">
+    <div class="terminal-header">
+      <div class="terminal-dots">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
+      </div>
+      <span class="terminal-title">insights &mdash; zsh</span>
+      <button id="terminal-close" class="terminal-close" aria-label="Close terminal">&times;</button>
     </div>
-    <span class="terminal-title">insights &mdash; zsh</span>
-    <button id="terminal-close" class="terminal-close" aria-label="Close terminal">&times;</button>
+    <div class="terminal-body" id="terminal-body">
+      <div class="terminal-line terminal-muted">$ standing by, ask away&hellip;</div>
+    </div>
   </div>
-  <div class="terminal-body" id="terminal-body">
-    <div class="terminal-line terminal-muted">$ standing by, ask away&hellip;</div>
-  </div>
-</div>
 
-<script src="{{ url_for('static', filename='app.js') }}"></script>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
 </body>
+
 </html>
