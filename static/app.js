@@ -203,7 +203,7 @@ function truncate(text, max) {
 
 function logInsights(query, result) {
   appendTerminal(`$ query: "${query}"`, "terminal-query");
-  const sourceCls = result.source === "kb" ? "terminal-kb" : result.source === "cache" ? "terminal-cache" : "terminal-api";
+  const sourceCls = result.source === "cache" ? "terminal-cache" : "terminal-api";
   appendTerminal(`> source: ${result.source} (score ${result.score.toFixed(3)})`, sourceCls);
   if (result.source === "cache" && result.cached_from) {
     appendTerminal(`> originally answered from: ${result.cached_from}`, "terminal-muted");
@@ -211,7 +211,7 @@ function logInsights(query, result) {
   if (result.context) {
     appendTerminal(`> context retrieved:\n${truncate(result.context, 400)}`, "terminal-muted");
   }
-  if (result.source === "api") {
+  if (result.source === "kb" || result.source === "api") {
     apiCallCount += 1;
     appendTerminal(`> groq api calls this session: ${apiCallCount}`, "terminal-api");
   }
@@ -256,7 +256,7 @@ function createTicket(query) {
 function finishTicket(refs, result) {
   refs.ticket.classList.remove("loading");
   refs.answerEl.innerHTML = renderMarkdownLite(result.answer);
-  if (result.source === "api") {
+  if (result.source === "api" || result.source === "kb") {
     refs.serialEl.classList.add("ticket-serial-api");
   }
   const stamp = document.createElement("span");
