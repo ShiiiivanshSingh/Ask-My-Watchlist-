@@ -2,9 +2,6 @@
 
 # Ask Shelf!
 
-<img src="https://github.com/user-attachments/assets/18fa3cac-33b9-4653-ad78-47400e2ac672" width="700" alt="Ask Shelf Screenshot">
-
-</div>
 
 <div align="center">
   <a href="https://ask-my-watchlist.vercel.app/" target="_blank">
@@ -14,6 +11,10 @@
   <a href="https://ask-my-watchlist.onrender.com/" target="_blank">
     <img src="https://img.shields.io/badge/Live_on_Render-46E3B7?style=for-the-badge&logo=render&logoColor=black" alt="Live on Render" />
   </a>
+</div>
+
+<img src="https://github.com/user-attachments/assets/18fa3cac-33b9-4653-ad78-47400e2ac672" width="700" alt="Ask Shelf Screenshot">
+
 </div>
 
 <div align="center">
