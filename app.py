@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify, render_template
 
+import os
 from pipeline import Pipeline
 from groq_client import GroqClient
 from movie_loader import load_letterboxd_kb, load_profile_chunk, load_comments_chunk
@@ -27,6 +28,8 @@ if comments_chunk:
 pipeline.kb = build_movie_kb(chunks, extra_entries=extra_entries)
 print(f"loaded {len(chunks)} movie/watchlist entries, {len(extra_entries)} extra entries")
 
+ADMIN_TOKEN = os.environ.get("ADMIN_TOKEN")
+
 
 @app.route("/")
 def index():
@@ -44,6 +47,8 @@ def ask():
 
 @app.route("/clear-cache", methods=["POST"])
 def clear_cache():
+    if not ADMIN_TOKEN or request.headers.get("X-Admin-Token") != ADMIN_TOKEN:
+        return jsonify({"error": "unauthorized"}), 403
     cleared = pipeline.clear_cache()
     return jsonify({"cleared": cleared, "cache_size": pipeline.cache_size()})
 

@@ -117,9 +117,19 @@ async function refreshStats() {
 clearCacheBtn.addEventListener("click", async () => {
   const confirmed = window.confirm("Clear the semantic cache? This can't be undone.");
   if (!confirmed) return;
+  const token = window.prompt("Enter admin token to confirm:");
+  if (!token) return;
   clearCacheBtn.disabled = true;
   try {
-    const res = await fetch("/clear-cache", { method: "POST" });
+    const res = await fetch("/clear-cache", {
+      method: "POST",
+      headers: { "X-Admin-Token": token },
+    });
+    if (res.status === 403) {
+      appendTerminal("$ clear-cache denied -- invalid admin token", "terminal-api");
+      clearCacheBtn.disabled = false;
+      return;
+    }
     const data = await res.json();
     cacheSizeLabel.textContent = `${data.cache_size} entries`;
     appendTerminal(`$ cache cleared -- removed ${data.cleared} entries`, "terminal-muted");
