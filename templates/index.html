@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%230A0A0A%22/><text x=%2250%22 y=%2268%22 font-size=%2270%22 text-anchor=%22middle%22 fill=%22%23D6A75A%22 font-family=%22monospace%22>*</text></svg>">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ask Me!</title>
+<title>Ask Shelf</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -12,62 +11,75 @@
 </head>
 <body>
 
+<div class="app-shell">
+  <aside id="sidebar" class="sidebar hidden">
+    <div class="sidebar-header">
+      <span class="sidebar-title">HISTORY</span>
+      <button id="sidebar-collapse" class="sidebar-toggle" aria-label="Collapse history" title="Collapse">&laquo;</button>
+    </div>
+    <ul id="history-list" class="history-list"></ul>
+    <p id="history-empty" class="setting-note">You haven&rsquo;t asked anything yet.</p>
+  </aside>
 
-<header class="topbar">
-  <div class="wordmark">ASK<span class="wordmark-accent">/</span>SHELF</div>
-  <div class="topbar-right">
-    <span class="entry-pill">{{ movie_count }} ENTRIES</span>
-    <button id="history-btn" class="nav-btn" aria-label="History" title="History">HISTORY</button>
-    <button id="settings-btn" class="nav-btn" aria-label="Settings" title="Settings">SETTINGS</button>
+  <button id="sidebar-expand" class="sidebar-expand" aria-label="Show history" title="Show history">&raquo; HISTORY</button>
+
+  <div class="app-main">
+    <header class="topbar">
+      <div class="wordmark">ASK<span class="wordmark-accent">/</span>SHELF</div>
+      <div class="topbar-right">
+        <span class="entry-pill">{{ movie_count }} ENTRIES</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <h1>ASK YOUR<br>MOVIE LOG</h1>
+        <p class="hero-sub">QUERY EVERY WATCH, RATING, AND REVIEW YOU'VE LOGGED. NO GUESSING &mdash; ONLY WHAT'S ACTUALLY ON FILE.</p>
+      </section>
+
+      <section class="ask-box">
+        <form id="ask-form" autocomplete="off">
+          <div class="ask-mark" aria-hidden="true">*</div>
+          <input type="text" id="query" placeholder="did i like magnolia?" aria-label="Ask a question about your movies">
+          <button type="submit">ASK &rarr;</button>
+        </form>
+      </section>
+
+      <section class="quick-row">
+        <span class="quick-label">OR TRY</span>
+        <button class="quick-btn" data-query="why i love magnolia soo much">WHY I LOVE MAGNOLIA</button>
+        <button class="quick-btn" data-query="when was the first time i watched the apartment">FIRST WATCH: THE APARTMENT</button>
+        <button class="quick-btn" data-query="my comfort movies">COMFORT MOVIES</button>
+        <button class="quick-btn" data-query="my views on godfather trilogy">GODFATHER TRILOGY</button>
+      </section>
+
+      <div id="tickets" aria-live="polite"></div>
+
+      <div id="empty-state" class="empty-state">
+        <div class="ticket-icon" aria-hidden="true">*</div>
+        <p>YOUR TICKET STUBS WILL SHOW UP HERE</p>
+        <p class="empty-sub">try &ldquo;have I watched Parasite?&rdquo; or &ldquo;what did I think of The Thing?&rdquo;</p>
+      </div>
+    </main>
   </div>
-</header>
+</div>
 
-<main>
-  <section class="hero">
-    <h1>ASK YOUR<br>MOVIE LOG</h1>
-    <p class="hero-sub">QUERY EVERY WATCH, RATING, AND REVIEW YOU'VE LOGGED. NO GUESSING &mdash; ONLY WHAT'S ACTUALLY ON FILE.</p>
-  </section>
-
-  <section class="ask-box">
-    <form id="ask-form" autocomplete="off">
-      <div class="ask-mark" aria-hidden="true">*</div>
-      <input type="text" id="query" placeholder="did i like magnolia?" aria-label="Ask a question about your movies">
-      <button type="submit">ASK &rarr;</button>
-    </form>
-  </section>
-
-  <section class="quick-row">
-    <span class="quick-label">OR TRY</span>
-    <button class="quick-btn" data-query="why i love magnolia soo much">WHY I LOVE MAGNOLIA</button>
-    <button class="quick-btn" data-query="my fav quote from the apartment movie">MY FAV LINES FROM THE APARTMENT</button>
-    <button class="quick-btn" data-query="my comfort movies">COMFORT MOVIES</button>
-    <button class="quick-btn" data-query="my views on godfather trilogy">GODFATHER TRILOGY</button>
-  </section>
-
-
-  <div id="tickets" aria-live="polite"></div>
-
-  <div id="empty-state" class="empty-state">
-    <div class="ticket-icon" aria-hidden="true">*</div>
-    <p>YOUR TICKET STUBS WILL SHOW UP HERE</p>
-    <p class="empty-sub">try &ldquo;my views on Magnolia?&rdquo; or &ldquo;what did I think of The Thing?&rdquo;</p>
-  </div>
-</main>
+<button id="settings-btn" class="corner-avatar" aria-label="Settings" title="Settings">S</button>
 
 <div id="settings-panel" class="overlay hidden">
   <div class="overlay-backdrop" data-close="settings-panel"></div>
   <div class="overlay-card">
     <div class="overlay-header">
-      <h2>SETTINGS</h2>
+      <h2>Settings</h2>
       <button class="overlay-close" data-close="settings-panel" aria-label="Close settings">&times;</button>
     </div>
     <div class="overlay-body">
       <div class="setting-row">
         <div>
-          <p class="setting-label">SEMANTIC CACHE</p>
+          <p class="setting-label">Semantic cache</p>
           <p class="setting-sub" id="cache-size-label">&mdash; entries</p>
         </div>
-        <button id="clear-cache-btn" class="danger-btn">CLEAR CACHE</button>
+        <button id="clear-cache-btn" class="danger-btn">Clear cache</button>
       </div>
       <p class="setting-note">
         Answers are cached by meaning, not exact wording &mdash; so a rephrased
@@ -79,25 +91,16 @@
   </div>
 </div>
 
-<div id="history-panel" class="overlay hidden">
-  <div class="overlay-backdrop" data-close="history-panel"></div>
-  <div class="overlay-card">
-    <div class="overlay-header">
-      <h2>HISTORY</h2>
-      <button class="overlay-close" data-close="history-panel" aria-label="Close history">&times;</button>
-    </div>
-    <div class="overlay-body">
-      <ul id="history-list" class="history-list"></ul>
-      <p id="history-empty" class="setting-note">You haven&rsquo;t asked anything yet.</p>
-    </div>
-  </div>
-</div>
-
 <button id="terminal-fab" class="terminal-fab" aria-label="Open insights terminal" title="Insights terminal">*</button>
 
 <div id="terminal-panel" class="terminal-panel hidden">
   <div class="terminal-header">
-    <span class="terminal-title">INSIGHTS &mdash; HOW SHELF ANSWERED</span>
+    <div class="terminal-dots">
+      <span class="dot dot-red"></span>
+      <span class="dot dot-yellow"></span>
+      <span class="dot dot-green"></span>
+    </div>
+    <span class="terminal-title">insights &mdash; zsh</span>
     <button id="terminal-close" class="terminal-close" aria-label="Close terminal">&times;</button>
   </div>
   <div class="terminal-body" id="terminal-body">

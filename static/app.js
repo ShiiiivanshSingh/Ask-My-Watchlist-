@@ -3,8 +3,9 @@ const input = document.getElementById("query");
 const ticketsEl = document.getElementById("tickets");
 const emptyState = document.getElementById("empty-state");
 
-const historyBtn = document.getElementById("history-btn");
-const historyPanel = document.getElementById("history-panel");
+const sidebar = document.getElementById("sidebar");
+const sidebarCollapse = document.getElementById("sidebar-collapse");
+const sidebarExpand = document.getElementById("sidebar-expand");
 const historyList = document.getElementById("history-list");
 const historyEmpty = document.getElementById("history-empty");
 
@@ -39,11 +40,6 @@ function pushHistory(query) {
   saveHistory(entries);
 }
 
-function formatTime(ts) {
-  const d = new Date(ts);
-  return d.toLocaleString(undefined, { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" });
-}
-
 function renderHistory() {
   const entries = loadHistory();
   historyList.innerHTML = "";
@@ -57,14 +53,9 @@ function renderHistory() {
     li.className = "history-item";
     const span = document.createElement("span");
     span.textContent = entry.query;
-    const time = document.createElement("span");
-    time.className = "history-time";
-    time.textContent = formatTime(entry.ts);
     li.appendChild(span);
-    li.appendChild(time);
     li.addEventListener("click", () => {
       input.value = entry.query;
-      closeOverlay(historyPanel);
       form.requestSubmit();
     });
     historyList.appendChild(li);
@@ -79,10 +70,25 @@ function closeOverlay(el) {
   el.classList.add("hidden");
 }
 
-historyBtn.addEventListener("click", () => {
-  renderHistory();
-  openOverlay(historyPanel);
-});
+const SIDEBAR_KEY = "askShelfSidebarOpen";
+
+function setSidebarOpen(open) {
+  if (open) {
+    sidebar.classList.remove("hidden");
+    sidebarExpand.classList.add("hidden");
+    document.body.classList.remove("sidebar-collapsed");
+  } else {
+    sidebar.classList.add("hidden");
+    sidebarExpand.classList.remove("hidden");
+    document.body.classList.add("sidebar-collapsed");
+  }
+  localStorage.setItem(SIDEBAR_KEY, open ? "1" : "0");
+}
+
+sidebarCollapse.addEventListener("click", () => setSidebarOpen(false));
+sidebarExpand.addEventListener("click", () => setSidebarOpen(true));
+
+setSidebarOpen(localStorage.getItem(SIDEBAR_KEY) === "1");
 
 settingsBtn.addEventListener("click", () => {
   refreshStats();
@@ -94,6 +100,8 @@ document.querySelectorAll("[data-close]").forEach((el) => {
     closeOverlay(document.getElementById(el.dataset.close));
   });
 });
+
+renderHistory();
 
 async function refreshStats() {
   try {
@@ -265,6 +273,7 @@ form.addEventListener("submit", async (e) => {
   const refs = createTicket(query);
   input.value = "";
   pushHistory(query);
+  renderHistory();
 
   try {
     const res = await fetch("/ask", {
