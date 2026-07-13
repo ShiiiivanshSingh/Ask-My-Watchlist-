@@ -725,17 +725,122 @@ main {
 .terminal-cache { color: #E8B95F; }
 .terminal-api { color: #FF8368; }
 
-@media (max-width: 560px) {
-  .topbar { padding: 18px 18px; }
-  body.sidebar-collapsed .topbar { padding-left: 130px; }
-  main { padding: 48px 18px 80px; }
-  #ask-form { flex-wrap: wrap; }
-  #ask-form button { width: 100%; }
+/* ── Mobile & Responsive ─────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  /* Terminal panel: near-fullscreen instead of tiny corner popup */
+  .terminal-panel {
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+    height: 55vh;
+    min-height: 260px;
+    border-radius: 12px 12px 0 0;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    resize: none;
+  }
+
+  /* Sidebar becomes a full-height overlay drawer */
   .sidebar {
     position: fixed;
     inset: 0 auto 0 0;
     z-index: 70;
     background: var(--bg);
     box-shadow: 0 0 40px rgba(0,0,0,0.6);
+  }
+
+  /* Settings button: move it above the terminal FAB so they don't overlap */
+  .corner-avatar {
+    bottom: 76px;
+    left: 16px;
+  }
+
+  .terminal-fab {
+    bottom: 20px;
+    right: 16px;
+  }
+}
+
+@media (max-width: 560px) {
+  /* Topbar */
+  .topbar {
+    padding: 14px 16px;
+  }
+
+  /* When sidebar is collapsed the expand button sits top-left;
+     don't shove the topbar content into the middle of the screen */
+  body.sidebar-collapsed .topbar {
+    padding-left: 16px;
+  }
+
+  /* Sidebar expand button: tuck it under the topbar so it doesn't
+     float over the header text */
+  .sidebar-expand {
+    top: auto;
+    bottom: 76px;
+    left: 16px;
+    font-size: 0.68rem;
+    padding: 7px 10px;
+  }
+
+  /* Settings button shifts up to stay above the sidebar-expand */
+  .corner-avatar {
+    bottom: 122px;
+    left: 16px;
+  }
+
+  /* Main content */
+  main {
+    padding: 32px 16px 100px;
+  }
+
+  /* Hero */
+  .hero {
+    margin-bottom: 32px;
+  }
+
+  /* Ask box */
+  .ask-box {
+    padding: 24px 16px;
+    margin-bottom: 16px;
+  }
+
+  /* Form: stack vertically on very small screens */
+  #ask-form {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  #ask-form button {
+    width: 100%;
+    padding: 12px 20px;
+  }
+
+  /* Quick-row: larger tap targets */
+  .quick-row {
+    gap: 8px;
+    margin-bottom: 40px;
+  }
+
+  .quick-btn {
+    padding: 9px 12px;
+    font-size: 0.68rem;
+  }
+
+  /* Tickets */
+  .ticket {
+    padding: 18px 16px;
+  }
+
+  .ticket-question {
+    font-size: 1rem;
+  }
+
+  .ticket-answer {
+    font-size: 0.88rem;
   }
 }
