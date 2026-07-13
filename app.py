@@ -8,18 +8,19 @@ from movie_kb import build_movie_kb
 app = Flask(__name__)
 
 pipeline = Pipeline(api_client=GroqClient(), cache_threshold=0.85, store_dir="store_shelf")
+
 chunks = load_letterboxd_kb(
-    "reviews.csv", "watched.csv",
-    ratings_path="ratings.csv",
-    diary_path="diary.csv",
-    watchlist_path="watchlist.csv",
+    "data/reviews.csv", "data/watched.csv",
+    ratings_path="data/ratings.csv",
+    diary_path="data/diary.csv",
+    watchlist_path="data/watchlist.csv",
 )
 
 extra_entries = {}
-profile_chunk = load_profile_chunk("profile.csv")
+profile_chunk = load_profile_chunk("data/profile.csv")
 if profile_chunk:
     extra_entries["My Profile"] = profile_chunk
-comments_chunk = load_comments_chunk("comments.csv")
+comments_chunk = load_comments_chunk("data/comments.csv")
 if comments_chunk:
     extra_entries["My Comments"] = comments_chunk
 
