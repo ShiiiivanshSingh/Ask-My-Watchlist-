@@ -19,22 +19,25 @@
 <body>
 
   <div class="app-shell">
+    <div id="sidebar-backdrop" class="sidebar-backdrop"></div>
     <aside id="sidebar" class="sidebar hidden">
       <div class="sidebar-header">
         <span class="sidebar-title">HISTORY</span>
-        <button id="sidebar-collapse" class="sidebar-toggle" aria-label="Collapse history"
-          title="Collapse">&laquo;</button>
       </div>
       <ul id="history-list" class="history-list"></ul>
       <p id="history-empty" class="setting-note">Nothing here yet &mdash; ask something and it'll show up.</p>
     </aside>
 
-    <button id="sidebar-expand" class="sidebar-expand" aria-label="Show history" title="Show history">&raquo;
-      HISTORY</button>
+
 
     <div class="app-main">
       <header class="topbar">
-        <div class="wordmark">ASK<span class="wordmark-accent">/</span>SHELF</div>
+        <div class="topbar-left">
+          <button id="sidebar-toggle" class="hamburger" aria-label="Toggle history" title="History">
+            <span></span><span></span><span></span>
+          </button>
+          <div class="wordmark">ASK<span class="wordmark-accent">/</span>SHELF</div>
+        </div>
         <div class="topbar-right">
           <a href="https://github.com/ShiiiivanshSingh/Ask-My-Watchlist-" target="_blank" rel="noopener noreferrer"
             class="entry-pill">
@@ -107,32 +110,7 @@
     </div>
   </div>
 
-  <button id="settings-btn" class="corner-avatar" aria-label="Settings" title="Settings">S</button>
 
-  <div id="settings-panel" class="overlay hidden">
-    <div class="overlay-backdrop" data-close="settings-panel"></div>
-    <div class="overlay-card">
-      <div class="overlay-header">
-        <h2>Settings</h2>
-        <button class="overlay-close" data-close="settings-panel" aria-label="Close settings">&times;</button>
-      </div>
-      <div class="overlay-body">
-        <div class="setting-row">
-          <div>
-            <p class="setting-label">Semantic cache</p>
-            <p class="setting-sub" id="cache-size-label">&mdash; entries</p>
-          </div>
-          <button id="clear-cache-btn" class="danger-btn">Clear cache</button>
-        </div>
-        <p class="setting-note">
-          Answers are cached by meaning, not exact wording &mdash; so a rephrased
-          question can replay an old answer instead of asking again. If a fix
-          was made to how questions get answered, clear the cache so old
-          (possibly outdated) replies stop showing up.
-        </p>
-      </div>
-    </div>
-  </div>
 
   <button id="terminal-fab" class="terminal-fab" aria-label="Open insights terminal"
     title="Insights terminal">*</button>

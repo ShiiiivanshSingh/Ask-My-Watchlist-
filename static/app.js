@@ -4,15 +4,10 @@ const ticketsEl = document.getElementById("tickets");
 const emptyState = document.getElementById("empty-state");
 
 const sidebar = document.getElementById("sidebar");
-const sidebarCollapse = document.getElementById("sidebar-collapse");
-const sidebarExpand = document.getElementById("sidebar-expand");
+const sidebarBackdrop = document.getElementById("sidebar-backdrop");
+const sidebarToggle = document.getElementById("sidebar-toggle");
 const historyList = document.getElementById("history-list");
 const historyEmpty = document.getElementById("history-empty");
-
-const settingsBtn = document.getElementById("settings-btn");
-const settingsPanel = document.getElementById("settings-panel");
-const cacheSizeLabel = document.getElementById("cache-size-label");
-const clearCacheBtn = document.getElementById("clear-cache-btn");
 
 const terminalFab = document.getElementById("terminal-fab");
 const terminalPanel = document.getElementById("terminal-panel");
@@ -20,8 +15,11 @@ const terminalClose = document.getElementById("terminal-close");
 const terminalBody = document.getElementById("terminal-body");
 
 const HISTORY_KEY = "askShelfHistory";
+const SIDEBAR_KEY = "askShelfSidebarOpen";
 let ticketCount = 0;
 let apiCallCount = 0;
+
+// ── History ──────────────────────────────────────────────────────────────────
 
 function loadHistory() {
   try {
@@ -57,44 +55,63 @@ function renderHistory() {
     li.appendChild(span);
     li.addEventListener("click", () => {
       input.value = entry.query;
+      // Close sidebar on mobile after picking a history item
+      if (window.innerWidth <= 768) setSidebarOpen(false);
       form.requestSubmit();
     });
     historyList.appendChild(li);
   }
 }
 
-function openOverlay(el) {
-  el.classList.remove("hidden");
-}
+// ── Sidebar ───────────────────────────────────────────────────────────────────
 
-function closeOverlay(el) {
-  el.classList.add("hidden");
+function isMobile() {
+  return window.innerWidth <= 768;
 }
-
-const SIDEBAR_KEY = "askShelfSidebarOpen";
 
 function setSidebarOpen(open) {
   if (open) {
     sidebar.classList.remove("hidden");
-    sidebarExpand.classList.add("hidden");
     document.body.classList.remove("sidebar-collapsed");
+    sidebarToggle.classList.add("is-open");
+    if (isMobile()) {
+      sidebarBackdrop.classList.add("visible");
+      document.body.style.overflow = "hidden"; // prevent scroll behind overlay
+    }
   } else {
     sidebar.classList.add("hidden");
-    sidebarExpand.classList.remove("hidden");
     document.body.classList.add("sidebar-collapsed");
+    sidebarToggle.classList.remove("is-open");
+    sidebarBackdrop.classList.remove("visible");
+    document.body.style.overflow = "";
   }
-  localStorage.setItem(SIDEBAR_KEY, open ? "1" : "0");
+  // Only persist preference on desktop; mobile always starts closed
+  if (!isMobile()) {
+    localStorage.setItem(SIDEBAR_KEY, open ? "1" : "0");
+  }
 }
 
-sidebarCollapse.addEventListener("click", () => setSidebarOpen(false));
-sidebarExpand.addEventListener("click", () => setSidebarOpen(true));
+sidebarToggle.addEventListener("click", () => setSidebarOpen(sidebar.classList.contains("hidden")));
+sidebarBackdrop.addEventListener("click", () => setSidebarOpen(false));
 
-setSidebarOpen(localStorage.getItem(SIDEBAR_KEY) === "1");
+// On mobile always start closed; on desktop restore saved preference
+if (isMobile()) {
+  setSidebarOpen(false);
+} else {
+  setSidebarOpen(localStorage.getItem(SIDEBAR_KEY) === "1");
+}
 
-settingsBtn.addEventListener("click", () => {
-  refreshStats();
-  openOverlay(settingsPanel);
+// Also close sidebar when resizing from mobile → desktop if it's an overlay
+window.addEventListener("resize", () => {
+  if (!isMobile() && sidebarBackdrop.classList.contains("visible")) {
+    setSidebarOpen(false);
+  }
 });
+
+// ── Overlay helpers ───────────────────────────────────────────────────────────
+
+function openOverlay(el) { el.classList.remove("hidden"); }
+function closeOverlay(el) { el.classList.add("hidden"); }
 
 document.querySelectorAll("[data-close]").forEach((el) => {
   el.addEventListener("click", () => {
@@ -104,40 +121,7 @@ document.querySelectorAll("[data-close]").forEach((el) => {
 
 renderHistory();
 
-async function refreshStats() {
-  try {
-    const res = await fetch("/stats");
-    const data = await res.json();
-    cacheSizeLabel.textContent = `${data.cache_size} entries`;
-  } catch (e) {
-    cacheSizeLabel.textContent = "unavailable";
-  }
-}
-
-clearCacheBtn.addEventListener("click", async () => {
-  const confirmed = window.confirm("Clear the semantic cache? This can't be undone.");
-  if (!confirmed) return;
-  const token = window.prompt("Enter admin token to confirm:");
-  if (!token) return;
-  clearCacheBtn.disabled = true;
-  try {
-    const res = await fetch("/clear-cache", {
-      method: "POST",
-      headers: { "X-Admin-Token": token },
-    });
-    if (res.status === 403) {
-      appendTerminal("$ clear-cache denied -- invalid admin token", "terminal-api");
-      clearCacheBtn.disabled = false;
-      return;
-    }
-    const data = await res.json();
-    cacheSizeLabel.textContent = `${data.cache_size} entries`;
-    appendTerminal(`$ cache cleared -- removed ${data.cleared} entries`, "terminal-muted");
-  } catch (e) {
-    appendTerminal("$ failed to clear cache", "terminal-api");
-  }
-  clearCacheBtn.disabled = false;
-});
+// ── Terminal ──────────────────────────────────────────────────────────────────
 
 terminalFab.addEventListener("click", () => {
   terminalPanel.classList.toggle("hidden");
@@ -154,6 +138,8 @@ function appendTerminal(text, cls) {
   terminalBody.appendChild(line);
   terminalBody.scrollTop = terminalBody.scrollHeight;
 }
+
+// ── Markdown / text helpers ───────────────────────────────────────────────────
 
 function escapeHtml(text) {
   const div = document.createElement("div");
@@ -183,10 +169,7 @@ function renderMarkdownLite(text) {
 
   for (const raw of lines) {
     const line = raw.trim();
-    if (!line) {
-      flushList();
-      continue;
-    }
+    if (!line) { flushList(); continue; }
     const numbered = line.match(/^\d+\.\s+(.*)/);
     const bulleted = line.match(/^[-*]\s+(.*)/);
     if (numbered) {
@@ -211,6 +194,8 @@ function truncate(text, max) {
   return text.length > max ? text.slice(0, max) + "..." : text;
 }
 
+// ── Ticket UI ─────────────────────────────────────────────────────────────────
+
 function logInsights(query, result) {
   appendTerminal(`$ query: "${query}"`, "terminal-query");
   const sourceCls = result.source === "cache" ? "terminal-cache" : "terminal-api";
@@ -230,7 +215,7 @@ function logInsights(query, result) {
 function stampLabel(source) {
   if (source === "kb") return "knowledge base";
   if (source === "cache") return "cache";
-  return "no match";
+  return "api";
 }
 
 function createTicket(query) {
@@ -249,7 +234,11 @@ function createTicket(query) {
 
   const answerEl = document.createElement("div");
   answerEl.className = "ticket-answer";
-  answerEl.textContent = "Flipping back through Shivansh's diary...";
+  // Pulsing loading text
+  const pulse = document.createElement("span");
+  pulse.className = "loading-pulse";
+  pulse.textContent = "Flipping back through Shivansh's diary…";
+  answerEl.appendChild(pulse);
 
   const footer = document.createElement("div");
   footer.className = "ticket-footer";
@@ -259,6 +248,12 @@ function createTicket(query) {
   ticket.appendChild(answerEl);
   ticket.appendChild(footer);
   ticketsEl.prepend(ticket);
+
+  // Auto-scroll to the new ticket so it's visible immediately.
+  // rAF ensures the element is in the DOM and laid out before we scroll.
+  requestAnimationFrame(() => {
+    ticket.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
 
   return { ticket, serialEl, answerEl, footer };
 }
@@ -275,12 +270,16 @@ function finishTicket(refs, result) {
   refs.footer.appendChild(stamp);
 }
 
+// ── Quick buttons ─────────────────────────────────────────────────────────────
+
 document.querySelectorAll(".quick-btn").forEach((btn) => {
   btn.addEventListener("click", () => {
     input.value = btn.dataset.query;
     form.requestSubmit();
   });
 });
+
+// ── Form submit ───────────────────────────────────────────────────────────────
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
