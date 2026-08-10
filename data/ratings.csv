@@ -28,7 +28,6 @@ Date,Name,Year,Letterboxd URI,Rating
 2025-10-07,Neon Genesis Evangelion,1995,https://boxd.it/ptEI,5
 2025-10-07,The Apartment,1960,https://boxd.it/2aGE,5
 2025-10-08,He's Just Not That Into You,2009,https://boxd.it/1WSG,3.5
-2025-10-26,The Monster of Florence,2025,https://boxd.it/Yq48,4.5
 2025-10-28,X,2022,https://boxd.it/sxVa,0.5
 2025-10-29,Click,2006,https://boxd.it/1YVM,3.5
 2025-10-29,Dumb and Dumber,1994,https://boxd.it/206m,4.5
@@ -117,8 +116,6 @@ Date,Name,Year,Letterboxd URI,Rating
 2026-02-01,Casablanca,1942,https://boxd.it/2aG0,4.5
 2026-02-01,When Harry Met Sally...,1989,https://boxd.it/29W2,5
 2026-02-09,Superman,2025,https://boxd.it/E9IU,1.5
-2026-02-09,The Dark Knight Rises,2012,https://boxd.it/H3m,4.5
-2026-02-09,Batman Begins,2005,https://boxd.it/2aIg,4
 2026-02-09,Shaun of the Dead,2004,https://boxd.it/29J8,4.5
 2026-02-09,Dazed and Confused,1993,https://boxd.it/1Ylk,4.5
 2026-02-09,Shrek the Third,2007,https://boxd.it/29yY,4.5
@@ -131,7 +128,6 @@ Date,Name,Year,Letterboxd URI,Rating
 2026-02-09,Tall Dark and Handsome,2023,https://boxd.it/Jb6o,4.5
 2026-02-09,Inception,2010,https://boxd.it/1skk,5
 2026-02-09,The Truman Show,1998,https://boxd.it/18U8,4
-2026-02-09,The Dark Knight,2008,https://boxd.it/2b0k,4
 2026-02-09,Portrait of a Lady on Fire,2019,https://boxd.it/jkPq,5
 2026-02-09,Scarface,1983,https://boxd.it/2b7g,5
 2026-02-09,Frances Ha,2012,https://boxd.it/41Xg,5
@@ -158,7 +154,6 @@ Date,Name,Year,Letterboxd URI,Rating
 2026-04-19,Miracle Mile,1988,https://boxd.it/1x68,5
 2026-04-24,Secret Admirer,1985,https://boxd.it/1x5E,4.5
 2026-04-26,Raising Arizona,1987,https://boxd.it/2avQ,5
-2026-04-27,"Salò, or the 120 Days of Sodom",1975,https://boxd.it/237s,1
 2026-05-01,Bend It Like Beckham,2002,https://boxd.it/2am0,5
 2026-05-02,Project Hail Mary,2026,https://boxd.it/pEeQ,5
 2026-05-02,Nowhere,1997,https://boxd.it/286E,4.5
@@ -181,7 +176,6 @@ Date,Name,Year,Letterboxd URI,Rating
 2026-05-08,The Sure Thing,1985,https://boxd.it/1Zqg,4
 2026-05-08,Two People Exchanging Saliva,2024,https://boxd.it/PM3e,4
 2026-05-08,The Matrix,1999,https://boxd.it/2a1m,4.5
-2026-05-08,Little Things,2025,https://boxd.it/Yk5E,4.5
 2026-05-08,Donnie Darko,2001,https://boxd.it/2b2A,4.5
 2026-05-08,Tees Maar Khan,2010,https://boxd.it/O5Y,4
 2026-05-08,Yes Man,2008,https://boxd.it/1WPW,4.5
@@ -258,7 +252,47 @@ Date,Name,Year,Letterboxd URI,Rating
 2026-07-15,The Tenant,1976,https://boxd.it/1TKk,4.5
 2026-07-19,"Synecdoche, New York",2008,https://boxd.it/23zw,5
 2026-07-20,Punch-Drunk Love,2002,https://boxd.it/20E4,5
-2026-07-20,Thesis,1996,https://boxd.it/1Z1U,5
 2026-07-20,Possession,1981,https://boxd.it/1BPm,5
 2026-07-21,Dawn of the Dead,1978,https://boxd.it/29gU,5
 2026-07-24,La Haine,1995,https://boxd.it/2as8,5
+2026-07-24,Shark Tale,2004,https://boxd.it/1VYe,5
+2026-07-26,Batman Begins,2005,https://boxd.it/2aIg,4.5
+2026-07-27,The Dark Knight,2008,https://boxd.it/2b0k,5
+2026-07-28,The Dark Knight Rises,2012,https://boxd.it/H3m,5
+2026-07-29,The Monster of Florence,2025,https://boxd.it/Yq48,4
+2026-07-30,Little Things,2025,https://boxd.it/Yk5E,5
+2026-07-30,Solaris,1972,https://boxd.it/2a2Y,5
+2026-07-30,A Woman Under the Influence,1974,https://boxd.it/1myg,5
+2026-07-31,Taken,2008,https://boxd.it/1ZXa,2.5
+2026-07-31,Taken 2,2012,https://boxd.it/2TWi,1.5
+2026-07-31,Taken 3,2014,https://boxd.it/7Iqq,0.5
+2026-08-03,August 32nd on Earth,1998,https://boxd.it/hY2,5
+2026-08-04,Maelström,2000,https://boxd.it/1caI,5
+2026-08-04,Collateral,2004,https://boxd.it/28F0,4.5
+2026-08-05,Carlito's Way,1993,https://boxd.it/226e,4
+2026-08-05,Point Break,1991,https://boxd.it/2958,3.5
+2026-08-05,Frankie and Johnny,1991,https://boxd.it/250S,4.5
+2026-08-05,Phone Booth,2002,https://boxd.it/285G,2.5
+2026-08-05,Spider-Man 2,2004,https://boxd.it/2a88,3.5
+2026-08-05,Spider-Man,2002,https://boxd.it/2a8i,3.5
+2026-08-05,The Wailing,2016,https://boxd.it/9fLy,3.5
+2026-08-05,Cure,1997,https://boxd.it/1blA,4
+2026-08-05,Do the Right Thing,1989,https://boxd.it/29gA,3
+2026-08-05,Land of the Dead,2005,https://boxd.it/1Tfm,3.5
+2026-08-05,Day of the Dead,1985,https://boxd.it/20dM,4
+2026-08-05,Night of the Living Dead,1968,https://boxd.it/1WwA,4.5
+2026-08-05,Thesis,1996,https://boxd.it/1Z1U,4.5
+2026-08-05,Sinners,2025,https://boxd.it/KQMM,3.5
+2026-08-05,Sicario,2015,https://boxd.it/8i7u,3.5
+2026-08-05,Backrooms,2026,https://boxd.it/EY6W,3
+2026-08-05,The Furious,2025,https://boxd.it/MQuM,2.5
+2026-08-05,"Are You There God? It's Me, Margaret.",2023,https://boxd.it/kiYC,3.5
+2026-08-05,I Saw the Devil,2010,https://boxd.it/FaK,2.5
+2026-08-05,Memories of Murder,2003,https://boxd.it/1TSo,3.5
+2026-08-05,The Raid,2011,https://boxd.it/3hBy,2.5
+2026-08-05,Psycho,1960,https://boxd.it/2ab2,4
+2026-08-05,Hot Fuzz,2007,https://boxd.it/2416,4
+2026-08-05,Blade Runner 2049,2017,https://boxd.it/b8wK,3.5
+2026-08-05,Blade Runner,1982,https://boxd.it/2bcA,4
+2026-08-09,Spider-Man: Brand New Day,2026,https://boxd.it/ACJE,1.5
+2026-08-10,The Odyssey,2026,https://boxd.it/QFQU,5
