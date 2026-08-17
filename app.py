@@ -3,7 +3,7 @@ from flask import Flask, request, jsonify, render_template
 import os
 from pipeline import Pipeline
 from groq_client import GroqClient
-from movie_loader import load_letterboxd_kb, load_profile_chunk, load_comments_chunk
+from movie_loader import load_letterboxd_kb, load_profile_chunk, load_comments_chunk, load_lists_chunks
 from movie_kb import build_movie_kb
 
 app = Flask(__name__)
@@ -25,8 +25,14 @@ comments_chunk = load_comments_chunk("data/comments.csv")
 if comments_chunk:
     extra_entries["My Comments"] = comments_chunk
 
+# Load curated lists into the KB so the pipeline can retrieve them by name
+lists_chunks = load_lists_chunks("data/lists")
+for list_chunk in lists_chunks:
+    list_name = list_chunk.split("\n", 1)[0].replace("List: ", "", 1)
+    extra_entries[list_name] = list_chunk
+
 pipeline.kb = build_movie_kb(chunks, extra_entries=extra_entries)
-print(f"loaded {len(chunks)} movie/watchlist entries, {len(extra_entries)} extra entries")
+print(f"loaded {len(chunks)} movie/watchlist entries, {len(extra_entries)} extra entries ({len(lists_chunks)} lists)")
 
 ADMIN_TOKEN = os.environ.get("ADMIN_TOKEN")
 

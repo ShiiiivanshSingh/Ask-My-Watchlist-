@@ -77,7 +77,7 @@ class MovieKB:
     def _extract_ratings(self):
         """{movie_name: most_recent_numeric_rating} for every per-movie
         entry that has one -- skips watchlist-only entries, unrated
-        entries, and non-movie extras like the profile/comments chunks."""
+        entries, list chunks, and non-movie extras like the profile/comments chunks."""
         ratings = {}
         for name, chunk in self.entries:
             if not chunk.startswith("Movie:"):
@@ -170,12 +170,15 @@ class MovieKB:
 
 def build_movie_kb(chunks, extra_entries=None):
     """extra_entries is an optional {name: chunk} dict for non-movie KB
-    entries (e.g. profile info, comments) that don't follow the
-    'Movie: Name (Year)' chunk format."""
+    entries (e.g. profile info, comments, curated lists) that don't follow
+    the 'Movie: Name (Year)' chunk format."""
     name_to_chunk = {}
     for chunk in chunks:
         first_line = chunk.split("\n", 1)[0]
-        name = first_line[len("Movie: "):].rsplit(" (", 1)[0]
+        if first_line.startswith("List:"):
+            name = first_line[len("List: "):].strip()
+        else:
+            name = first_line[len("Movie: "):].rsplit(" (", 1)[0]
         name_to_chunk[name] = chunk
     if extra_entries:
         name_to_chunk.update(extra_entries)

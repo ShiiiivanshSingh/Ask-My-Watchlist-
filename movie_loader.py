@@ -1,4 +1,6 @@
 import csv
+import glob
+import os
 from collections import defaultdict
 
 
@@ -111,6 +113,62 @@ def load_comments_chunk(comments_path):
     for row in sorted(rows, key=lambda r: r["Date"]):
         lines.append(f"On {row['Date']} (re: {row['Content']}): {row['Comment']}")
     return "\n".join(lines)
+
+
+def load_lists_chunks(lists_dir):
+    """Parse every Letterboxd list CSV in lists_dir into a KB text chunk.
+    Each chunk is labelled with the list name and contains an ordered film list.
+    Only CSVs that contain a 'Position' column are treated as ranked lists;
+    others are skipped silently.
+    """
+    chunks = []
+    for csv_path in sorted(glob.glob(os.path.join(lists_dir, "*.csv"))):
+        try:
+            with open(csv_path, newline="", encoding="utf-8") as f:
+                raw = f.readlines()
+
+            # The list header block (Date, Name, Tags, URL, Description) comes
+            # before the ranked entries block that starts with "Position,...".
+            try:
+                rank_start = next(i for i, l in enumerate(raw) if l.startswith("Position,"))
+            except StopIteration:
+                continue  # not a ranked list CSV
+
+            # Parse list metadata from the header block
+            header_rows = list(csv.DictReader(raw[1:rank_start]))
+            list_name = ""
+            list_desc = ""
+            if header_rows:
+                list_name = header_rows[0].get("Name", "").strip()
+                list_desc = header_rows[0].get("Description", "").strip()
+
+            if not list_name:
+                list_name = os.path.splitext(os.path.basename(csv_path))[0].replace("-", " ")
+
+            # Parse the ranked entries
+            reader = csv.DictReader(raw[rank_start:])
+            entries = []
+            for row in reader:
+                if not row.get("Position"):
+                    continue
+                film = f"{row['Position']}. {row['Name']} ({row['Year']})"
+                if row.get("Description", "").strip():
+                    film += f" -- {row['Description'].strip()}"
+                entries.append(film)
+
+            if not entries:
+                continue
+
+            lines = [f"List: {list_name}"]
+            if list_desc:
+                lines.append(f"Description: {list_desc}")
+            lines.extend(entries)
+            chunks.append("\n".join(lines))
+
+        except Exception:
+            continue  # skip malformed files
+
+    return chunks
 
 
 if __name__ == "__main__":
