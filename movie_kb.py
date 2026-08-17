@@ -129,6 +129,34 @@ class MovieKB:
                 return chunk, score
         return None, score
 
+    def _list_keyword_search(self, query):
+        """Fallback for when name-level fuzzy matching fails: scan list chunk
+        contents (film titles, descriptions) for keyword overlap with the
+        query. Only considers chunks with a 'List:' header."""
+        # Strip noise and require words of 4+ chars to avoid false positives
+        q_words = {
+            w for w in re.findall(r"[a-z]{4,}", query.lower())
+            if w not in QUERY_NOISE_WORDS
+        }
+        if not q_words:
+            return None, 0.0
+
+        best_score, best_chunk = 0.0, None
+        for name, chunk in self.entries:
+            if not chunk.startswith("List:"):
+                continue
+            # Score = fraction of query keywords found anywhere in the chunk
+            chunk_words = set(re.findall(r"[a-z]{4,}", chunk.lower()))
+            overlap = len(q_words & chunk_words)
+            score = overlap / len(q_words)
+            if score > best_score:
+                best_score, best_chunk = score, chunk
+
+        # Require at least 30 % of query keywords to match
+        if best_score >= 0.3:
+            return best_chunk, best_score
+        return None, 0.0
+
     def query(self, question, top_k=1):
         q_lower = question.lower()
         wants_franchise = self._wants_franchise(q_lower)
@@ -138,9 +166,20 @@ class MovieKB:
             if re.search(r"\b" + re.escape(name.lower()) + r"\b", q_lower)
         ]
         if exact_matches:
-            best_name, best_chunk = exact_matches[0]
-            resolved, score = self._resolve(best_name, 1.0, wants_franchise)
-            return (resolved or best_chunk), score
+            if len(exact_matches) == 1 or wants_franchise:
+                # Single movie (or franchise group) -- resolve as before
+                best_name, best_chunk = exact_matches[0]
+                resolved, score = self._resolve(best_name, 1.0, wants_franchise)
+                return (resolved or best_chunk), score
+            else:
+                # Multiple distinct movies mentioned in one query (e.g.
+                # "has he seen Amélie and Magnolia?") -- return all chunks so
+                # the LLM can answer about every one of them.
+                parts = []
+                for name, chunk in exact_matches[:6]:  # cap at 6 to stay in context
+                    resolved, _ = self._resolve(name, 1.0, False)
+                    parts.append(resolved or chunk)
+                return "\n\n---\n\n".join(parts), 1.0
 
         # No literal movie title in the question -- check whether it's
         # asking for an extreme across the whole log (lowest/highest rated)
@@ -165,6 +204,12 @@ class MovieKB:
         if best_score >= self.match_threshold:
             resolved, score = self._resolve(best_name, best_score, wants_franchise)
             return resolved, score
+
+        # Last resort: keyword search inside list chunk contents
+        list_chunk, list_score = self._list_keyword_search(question)
+        if list_chunk:
+            return list_chunk, list_score
+
         return None, best_score
 
 
