@@ -275,6 +275,24 @@ function finishTicket(refs, result) {
 const quickRow = document.getElementById("quick-row");
 const quickToggle = document.getElementById("quick-toggle");
 
+function shuffleQuickButtons() {
+  if (!quickRow) return;
+  const buttons = Array.from(quickRow.querySelectorAll(".quick-btn"));
+  for (let i = buttons.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [buttons[i], buttons[j]] = [buttons[j], buttons[i]];
+  }
+  buttons.forEach((btn) => {
+    if (quickToggle) {
+      quickRow.insertBefore(btn, quickToggle);
+    } else {
+      quickRow.appendChild(btn);
+    }
+  });
+}
+
+shuffleQuickButtons();
+
 if (quickToggle && quickRow) {
   quickToggle.addEventListener("click", () => {
     const isExpanded = quickRow.classList.toggle("expanded");

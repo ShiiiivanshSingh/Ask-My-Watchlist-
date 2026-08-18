@@ -798,13 +798,13 @@ main {
     right: 16px;
   }
 
-  /* Quick row: on mobile only show first 3 items unless expanded */
+  /* Quick row: on mobile only show first 4 items unless expanded */
   .quick-toggle-btn {
     display: inline-flex;
     padding: 9px 12px;
   }
 
-  .quick-row:not(.expanded) .quick-btn:nth-child(n+4) {
+  .quick-row:not(.expanded) .quick-btn:nth-child(n+5) {
     display: none;
   }
 }
