@@ -311,6 +311,38 @@ main {
   border-color: var(--text-muted);
 }
 
+.quick-toggle-btn {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--rule);
+  color: var(--amber);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.03em;
+  padding: 7px 11px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: color 0.12s ease, border-color 0.12s ease, background-color 0.12s ease;
+}
+
+.quick-toggle-btn:hover {
+  color: var(--text);
+  border-color: var(--amber);
+  background: rgba(214, 167, 90, 0.08);
+}
+
+.quick-toggle-btn .toggle-icon {
+  display: inline-block;
+  font-size: 0.75rem;
+  transition: transform 0.2s ease;
+}
+
+.quick-row.expanded .quick-toggle-btn .toggle-icon {
+  transform: rotate(180deg);
+}
+
 .empty-state {
   text-align: center;
   color: var(--text-dim);
@@ -764,6 +796,16 @@ main {
   .terminal-fab {
     bottom: 20px;
     right: 16px;
+  }
+
+  /* Quick row: on mobile only show first 3 items unless expanded */
+  .quick-toggle-btn {
+    display: inline-flex;
+    padding: 9px 12px;
+  }
+
+  .quick-row:not(.expanded) .quick-btn:nth-child(n+4) {
+    display: none;
   }
 }
 

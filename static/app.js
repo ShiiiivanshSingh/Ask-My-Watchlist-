@@ -272,6 +272,17 @@ function finishTicket(refs, result) {
 
 // ── Quick buttons ─────────────────────────────────────────────────────────────
 
+const quickRow = document.getElementById("quick-row");
+const quickToggle = document.getElementById("quick-toggle");
+
+if (quickToggle && quickRow) {
+  quickToggle.addEventListener("click", () => {
+    const isExpanded = quickRow.classList.toggle("expanded");
+    quickToggle.setAttribute("aria-label", isExpanded ? "Show fewer suggestions" : "Show more suggestions");
+    quickToggle.setAttribute("title", isExpanded ? "Show fewer suggestions" : "Show more suggestions");
+  });
+}
+
 document.querySelectorAll(".quick-btn").forEach((btn) => {
   btn.addEventListener("click", () => {
     input.value = btn.dataset.query;
