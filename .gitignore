@@ -6,7 +6,3 @@ __pycache__/
 env/
 venv/
 .env
-store_shelf/cache.json
-store_shelf/cache.npy
-store_shelf/kb.json
-store_shelf/kb.npy

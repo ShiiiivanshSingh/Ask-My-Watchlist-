@@ -32,7 +32,7 @@ def _load_taste_profile(path: str) -> str:
 
 
 class GroqClient:
-    def __init__(self, model="llama-3.3-70b-versatile", max_tokens=1000, api_key=None, user_name="Shivansh"):
+    def __init__(self, model="openai/gpt-oss-20b", max_tokens=1000, api_key=None, user_name="Shivansh"):
         self.api_key = api_key or os.environ["GROQ_API_KEY"]
         self.model = model
         self.max_tokens = max_tokens
